@@ -1,2 +1,18 @@
 # Ignorar la carpeta .vs generada por Visual Studio
 .vs/
+
+# Ignorar archivos de usuario específicos
+*.vcxproj.user
+*.suo
+*.user
+
+# Ignorar archivos de compilación y binarios
+*/Debug/
+*/Release/
+*/x64/
+*/x86/
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.log
