@@ -10,6 +10,7 @@ using namespace std;
 
 double Coins = 0;
 bool MinasDebloqueadas[5] = { true, false, false, false , false};
+bool Debounce = true;
 
 void Shop();
 void MainMenu();
@@ -29,6 +30,7 @@ void Minar(int Mine) {
         cout << "Minning...\n";
         Sleep(2000);
         system("cls");
+        cout << endl;
         srand(std::time(0));
         random_device rd;
         mt19937 gen(rd());
@@ -45,6 +47,7 @@ void Minar(int Mine) {
         cout << "Minning...\n";
         Sleep(2000);
         system("cls");
+        cout << endl;
         srand(std::time(0));
         random_device rd;
         mt19937 gen(rd());
@@ -61,6 +64,7 @@ void Minar(int Mine) {
         cout << "Minning...\n";
         Sleep(2000);
         system("cls");
+        cout << endl;
         srand(std::time(0));
         random_device rd;
         mt19937 gen(rd());
@@ -77,6 +81,7 @@ void Minar(int Mine) {
         cout << "Minning...\n";
         Sleep(2000);
         system("cls");
+        cout << endl;
         srand(std::time(0));
         random_device rd;
         mt19937 gen(rd());
@@ -93,6 +98,7 @@ void Minar(int Mine) {
         cout << "Minning...\n";
         Sleep(2000);
         system("cls");
+        cout << endl;
         srand(std::time(0));
         random_device rd;
         mt19937 gen(rd());
@@ -107,6 +113,8 @@ void Minar(int Mine) {
 }
 
 void Mine1() {
+
+    Debounce = true;
     system("cls");
     cout << "Mine 1\n";
     cout << endl;
@@ -116,18 +124,23 @@ void Mine1() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Minar(1);
             break;
         }
+        Sleep(10);
     }
 }
 
 void Mine2() {
+
+    Debounce = true;
     system("cls");
     cout << "Mine 2\n";
     cout << endl;
@@ -137,18 +150,23 @@ void Mine2() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Minar(2);
             break;
         }
+        Sleep(10);
     }
 }
 
 void Mine3() {
+
+    Debounce = true;
     system("cls");
     cout << "Mine 3\n";
     cout << endl;
@@ -158,18 +176,23 @@ void Mine3() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Minar(3);
             break;
         }
+        Sleep(10);
     }
 }
 
 void Mine4() {
+
+    Debounce = true;
     system("cls");
     cout << "Mine 4\n";
     cout << endl;
@@ -179,18 +202,23 @@ void Mine4() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Minar(4);
             break;
         }
+        Sleep(10);
     }
 }
 
 void Mine5() {
+
+    Debounce = true;
     system("cls");
     cout << "Mine 5\n";
     cout << endl;
@@ -200,19 +228,23 @@ void Mine5() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Minar(5);
             break;
         }
+        Sleep(10);
     }
 }
 
 void Mine() {
 
+    Debounce = true;
     system("cls");
     cout << "Enter a mine\n";
 
@@ -236,36 +268,44 @@ void Mine() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49 and MinasDebloqueadas[0] == true) {
+        if (tecla == 49 and MinasDebloqueadas[0] == true and Debounce) {
+            Debounce = false;
             Mine1();
             break;
         }
-        if (tecla == 50 and MinasDebloqueadas[1] == true) {
+        if (tecla == 50 and MinasDebloqueadas[1] == true and Debounce) {
+            Debounce = false;
             Mine2();
             break;
         }
-        if (tecla == 51 and MinasDebloqueadas[2] == true) {
+        if (tecla == 51 and MinasDebloqueadas[2] == true and Debounce) {
+            Debounce = false;
             Mine3();
             break;
         }
-        if (tecla == 52 and MinasDebloqueadas[3] == true) {
+        if (tecla == 52 and MinasDebloqueadas[3] == true and Debounce) {
+            Debounce = false;
             Mine4();
             break;
         }
-        if (tecla == 53 and MinasDebloqueadas[4] == true) {
+        if (tecla == 53 and MinasDebloqueadas[4] == true and Debounce) {
+            Debounce = false;
             Mine5();
             break;
         }
+        Sleep(10);
     }
 
 }
 
 void Shopping() {
 
+    Debounce = true;
     system("cls");
     cout << endl;
     cout << "Buying...\n";
@@ -280,6 +320,7 @@ void Shopping() {
 
 void Shop() {
 
+    Debounce = true;
     system("cls");
     cout << "Shop Coins: " << Coins << endl;
     cout << endl;
@@ -330,39 +371,46 @@ void Shop() {
 
     while (true) {
         char tecla = _getch();
-        if (tecla == 48) {
+        if (tecla == 48 and Debounce) {
+            Debounce = false;
             MainMenu();
             break;
         }
-        if (tecla == 49 and MinasDebloqueadas[1] == false and Coins >= 150) {
+        if (tecla == 49 and MinasDebloqueadas[1] == false and Coins >= 150 and Debounce) {
+            Debounce = false;
             Coins = Coins - 150;
 			MinasDebloqueadas[1] = true;
             Shopping();
             break;
         }
-        if (tecla == 50 and MinasDebloqueadas[2] == false and Coins >= 300) {
+        if (tecla == 50 and MinasDebloqueadas[2] == false and Coins >= 300 and Debounce) {
+            Debounce = false;
             Coins = Coins - 300;
             MinasDebloqueadas[2] = true;
             Shopping();
             break;
         }
-        if (tecla == 51 and MinasDebloqueadas[3] == false and Coins >= 600) {
+        if (tecla == 51 and MinasDebloqueadas[3] == false and Coins >= 600 and Debounce) {
+            Debounce = false;
             Coins = Coins - 600;
             MinasDebloqueadas[3] = true;
             Shopping();
             break;
         }
-        if (tecla == 52 and MinasDebloqueadas[4] == false and Coins >= 1200) {
+        if (tecla == 52 and MinasDebloqueadas[4] == false and Coins >= 1200 and Debounce) {
+            Debounce = false;
             Coins = Coins - 1200;
             MinasDebloqueadas[4] = true;
             Shopping();
             break;
         }
+        Sleep(10);
     }
 }
 
 void MainMenu() {
 
+    Debounce = true;
     system("cls");
     cout << "Main Menu\n";
     cout << endl;
@@ -373,14 +421,17 @@ void MainMenu() {
     cout << "Coming Soon\n";
     while (true) {
         char tecla = _getch();
-        if (tecla == 49) {
+        if (tecla == 49 and Debounce) {
+            Debounce = false;
             Mine();
             break;
         }
-        if (tecla == 50) {
+        if (tecla == 50 and Debounce) {
+            Debounce = false;
             Shop();
             break;
         }
+        Sleep(10);
     }
 }
 
