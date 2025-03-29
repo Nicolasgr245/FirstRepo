@@ -22,7 +22,7 @@ int main() {
     int option;
 
     while (isActive) {
-        cout << "Введите данные для расчета скорости" << endl;
+        cout << "hi данные для расчета скорости" << endl;
         cout << "Введите время в секундах: ";
         while (!(cin >> time) || time < 0) {
             cin.clear();
